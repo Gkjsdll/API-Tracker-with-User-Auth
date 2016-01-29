@@ -5,7 +5,11 @@ var authMiddleware = require('../config/auth');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: "Pokemon Team Customizer" });
+  var usertoken = req.cookies.usertoken;
+  if(usertoken){
+    return res.redirect('team');
+  }
+  res.render('index', { title: "Pokemon Team Customizer"});
 });
 
 router.get('/login', function(req, res, next) {

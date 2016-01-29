@@ -24,7 +24,7 @@ router.post('/login', function(req, res, next) {
     if(err) return res.status(400).send(err);
     User.findOne({uid: authData.uid}, function(err, user) {
       var token = user.generateToken();
-      res.cookie('mytoken', token).send();
+      res.cookie('usertoken', token).send();
     });
   });
 });
@@ -37,7 +37,7 @@ router.get('/profile', authMiddleware, function(req, res) {
 });
 
 router.get('/logout', function(req, res, next) {
-  res.clearCookie('mytoken').redirect('/');
+  res.clearCookie('usertoken').redirect('/');
 });
 
 

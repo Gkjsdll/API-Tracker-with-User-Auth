@@ -5,9 +5,8 @@ var authMiddleware = require('../config/auth');
 
 router.use(authMiddleware);
 
-/* GET home page. */
 router.get('/', function(req, res, next) {
-  // show all pokemon
+  res.render('pokemon', { title: "All Pokémon - Pokémon Team Customizer" });
 });
 
 module.exports = router;

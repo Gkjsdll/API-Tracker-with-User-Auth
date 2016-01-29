@@ -8,7 +8,7 @@ var authMiddleware = function(req, res, next) {
   try {
     var payload = jwt.decode(req.cookies.mytoken, JWT_SECRET);
   } catch(err) {
-    return res.status(401).send('Authentication failed.');
+    return res.status(401).redirect('/login');
   }
 
   req.user = payload;

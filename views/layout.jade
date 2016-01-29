@@ -4,6 +4,8 @@ html
     title Pokemon Team Customizer
     link(rel='stylesheet', href='/lib/bootstrap/dist/css/bootstrap.min.css')
     link(rel='stylesheet', href='/css/style.css')
+    link(rel="shortcut icon", type="image/x-icon", href="images/favicon.png")
+    block links
   body
     nav.navbar.navbar-default.navbar-static-top
       .container
@@ -30,6 +32,8 @@ html
 
     .container
       block content
+  
+    block post-container
 
     script(src='/lib/jquery/dist/jquery.min.js')
     script(src='/lib/bootstrap/dist/js/bootstrap.min.js')

@@ -1,16 +1,13 @@
 extends layout
 
 block links
-  link(rel="stylesheet" href='/css/index.css')
+  link(rel="stylesheet" href='/css/pokemon.css')
 
 block content
   h1= title
   p Welcome to #{title}  
   p#description This site is used to add pokémon to a team & pick their moves
   
-block post-container
-  img(src="/images/pokepaper.png")#pokepaper
-  
 block scripts
   script(src='/lib/firebase/firebase.js')
-  script(src="/js/index.js")
+  script(src="/js/pokemon.js")

@@ -13,3 +13,12 @@
 #login, #register {
   display: none;
 }
+
+#teamContainer {
+  display: none;
+}
+
+#loading {
+  width: 100%;
+  text-align: center;
+}

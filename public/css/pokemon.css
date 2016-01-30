@@ -5,3 +5,7 @@ a:hover {
 #login, #register {
   display: none;
 }
+
+#loading {
+  text-align: center;
+}

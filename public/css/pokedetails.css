@@ -10,3 +10,7 @@ ul {
 #addPokemon {
   outline: 0px;
 }
+
+#login, #register {
+  display: none;
+}

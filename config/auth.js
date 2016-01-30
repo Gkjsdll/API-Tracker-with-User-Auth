@@ -16,10 +16,6 @@ var authMiddleware = function(req, res, next) {
 
   req.user = payload;
 
-  User.findOne({uid: req.user.uid}, function(err, user) {
-    console.log("Mongo user is:", user);
-  });
-
   next();
 };
 

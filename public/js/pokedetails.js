@@ -4,6 +4,10 @@ $(document).ready(init);
 
 function init(){
   popData();
+  $.get("/users/profile")
+  .success(function(data){
+    console.log(data);
+  })
 }
 
 
@@ -13,9 +17,34 @@ function init(){
 //swal the user for redirecting to Team or Pokémon
 
 function addPokemon(){
-  $.post("/team")
+  $.get("/team/size")
   .success(function(data){
     console.log(`Team currently has ${data} pokémon.`);
+    var teamSize = data;
+    if(teamSize >= 6){
+      swal({
+        title: "Team Full",
+        text: "Release a pokémon to continue"
+      })
+    }
+    else{
+      swal({
+        title: "Name Your Pokémon",
+        type: "input",
+        showCancelButton: false,
+        closeOnConfirm: false,
+      }, function(pokeName){
+        var pokeId = location.pathname.slice(location.pathname.lastIndexOf("/")).slice(1);
+        console.log("pokeId:", pokeId);
+        console.log("Pokémon named", pokeName);
+        $.post(`/team`, {slot: teamSize, poketype: pokeId, name: pokeName})
+        .success(function(){
+          console.log("Make this redirect to /team once it is fully funcitonal.");
+          swal.close();
+        })
+        swal.close();
+      })
+    }
   })
   .fail(function(err){
     return console.error(err);

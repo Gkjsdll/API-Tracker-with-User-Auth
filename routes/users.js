@@ -34,6 +34,7 @@ router.post('/login', function(req, res, next) {
 router.get('/profile', authMiddleware, function(req, res) {
   //// logged in,   req.user
   User.findById(req.user._id, function(err, user) {
+    user.populate('pokemon');
     res.send(user);
   });
 });

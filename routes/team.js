@@ -25,11 +25,9 @@ router.post("/", function(req, res, next){
     var pokemon = {};
     if(req.body.name) pokemon.name = req.body.name;
     pokemon.poketype = req.body.poketype;
-    console.log(`user.pokemon[${req.body.slot}]:`, user.pokemon[req.body.slot]);
     user.pokemon.push(pokemon);
-    user.save(function(){
-      res.send("Feature not yet implemented.");
-    });
+    console.log("user.pokemon:", user.pokemon);
+    user.save();
   });
 })
 

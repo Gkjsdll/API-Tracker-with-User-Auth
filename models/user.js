@@ -6,7 +6,7 @@ var JWT_SECRET = process.env.JWT_SECRET;
 
 var userSchema = new mongoose.Schema({
   uid: String,
-  pokemon:[{type:Mongoose.Types.ObjectId, ref: 'Pokemon'}]
+  pokemon: []
 });
 
 userSchema.methods.generateToken = function() {

@@ -35,8 +35,6 @@ function addPokemon(){
         closeOnConfirm: false,
       }, function(pokeName){
         var pokeId = location.pathname.slice(location.pathname.lastIndexOf("/")).slice(1);
-        console.log("pokeId:", pokeId);
-        console.log("Pokémon named", pokeName);
         $.post(`/team`, {slot: teamSize, poketype: pokeId, name: pokeName})
         .success(function(){
           console.log("Make this redirect to /team once it is fully funcitonal.");
@@ -58,7 +56,6 @@ function popData(){
     var pokemon = $("<div>");
     pokemon.append($("<p>").text(data.name));
     var types = $("<ul>");
-    // console.log(data);
     pokemon.append($("<h4>").text("Types:"));
     data.types.forEach(function(type){
       types.append($("<li>").text(type.name));

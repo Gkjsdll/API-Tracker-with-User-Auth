@@ -19,14 +19,13 @@ router.get('/size', function(req, res, next) {
 });
 
 router.post("/", function(req, res, next){
-  console.log("req.body:", req.body);
   User.findById(req.user._id, function(err, user) {
     if(err) return res.status(500).send(err);
     var pokemon = {};
     if(req.body.name) pokemon.name = req.body.name;
     pokemon.poketype = req.body.poketype;
     user.pokemon.push(pokemon);
-    console.log("user.pokemon:", user.pokemon);
+    // console.log("user.pokemon:", user.pokemon);
     user.save();
   });
 })

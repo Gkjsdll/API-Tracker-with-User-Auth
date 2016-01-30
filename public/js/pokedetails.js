@@ -9,12 +9,6 @@ function init(){
   })
 }
 
-
-
-//swal the user for a name
-//add pokemon to mongo with custom name
-//swal the user for redirecting to Team or Pokémon
-
 function addPokemon(){
   $.get("/team/size")
   .success(function(data){
@@ -27,21 +21,21 @@ function addPokemon(){
       })
     }
     else{
-      swal({
-        title: "Name Your Pokémon",
-        text: "This is optional.",
-        type: "input",
-        showCancelButton: false,
-        closeOnConfirm: false,
-        inputPlaceholder: "Unnamed"
-      }, function(pokeName){
-        var pokeId = location.pathname.slice(location.pathname.lastIndexOf("/")).slice(1);
-        $.post(`/team`, {slot: teamSize, poketype: pokeId, name: pokeName})
-        .success(function(){
-          location.href = "/team";
-          swal.close()
-        })
-      })
+      // swal({
+      //   title: "Name Your Pokémon",
+      //   text: "This currently has no effect",
+      //   type: "input",
+      //   showCancelButton: false,
+      //   closeOnConfirm: false,
+      //   inputPlaceholder: "Unnamed"
+      // }, function(pokeName){
+      var pokeId = location.pathname.slice(location.pathname.lastIndexOf("/")).slice(1);
+      $.post(`/team`, {slot: teamSize, poketype: pokeId})
+      .success(function(){
+        location.href = "/team";
+        swal.close()
+      });
+      // })
     }
   })
   .fail(function(err){

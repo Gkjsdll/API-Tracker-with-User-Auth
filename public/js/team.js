@@ -14,7 +14,7 @@ $(document).ready(function(){
 function getPokeData(which){
   $.get(`http://pokeapi.co/api/v1/pokemon/${which}`)
   .success(function(pokedata){
-    var $pokemon = $("<div>").addClass("pokemon col-xs-2")
+    var $pokemon = $("<div>").addClass("pokemon col-xs-4 col-sm-2")
     $pokemon.append($("<p>").text(pokedata.name));
     $pokemon.append($("<button>").addClass("btn btn-default").text("Release Pokémon"));
     $pokemon.data("apidata", pokedata)

@@ -3,6 +3,8 @@
 var Firebase = require('firebase');
 var express = require('express');
 var router = express.Router();
+var jwt = require('jwt-simple');
+var JWT_SECRET = process.env.JWT_SECRET;
 
 var authMiddleware = require('../config/auth');
 

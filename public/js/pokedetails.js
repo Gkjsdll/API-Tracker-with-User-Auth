@@ -8,22 +8,20 @@ function init(){
 
 
 
-function checkTeam(){
-  console.log(document.cookie);
-  $.get("/team/size")
+//swal the user for a name
+//add pokemon to mongo with custom name
+//swal the user for redirecting to Team or Pokémon
+
+function addPokemon(){
+  $.post("/team")
   .success(function(data){
-    console.log(data);
+    console.log(`Team currently has ${data} pokémon.`);
   })
   .fail(function(err){
     return console.error(err);
   })
 }
 
-function addPokemon(){
-  //swal the user for a name
-  //add pokemon to mongo with custom name
-  //swal the user for redirecting to Team or Pokémon
-}
 
 function popData(){
   $.get(`http://pokeapi.co/api/v1/pokemon${location.pathname.slice(location.pathname.lastIndexOf("/"))}`)
@@ -51,6 +49,6 @@ function popData(){
     pokemon.append($("<button>").addClass("btn btn-default").text("Add to Team").attr("id", "addPokemon"));
     $("#mainContainer").append(pokemon);
     $("#loading").remove();
-    $("#addPokemon").click(checkTeam);
+    $("#addPokemon").click(addPokemon);
   });
 }

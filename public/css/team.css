@@ -6,6 +6,12 @@
   margin: 0px 0px 0px 0px;
 }
 
+.pokemon button {
+  white-space: normal;
+  width: 90%;
+  min-width: 81px;
+}
+
 .btn:active, .btn:focus, .btn:active:focus, .btn-default:active, .btn-default:focus, .btn-default:active:focus { /*bootstrap is annoying*/
   outline: 0px;
 }

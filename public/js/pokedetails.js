@@ -9,7 +9,6 @@ function init(){
 
 
 function checkTeam(){
-  console.log("Clicky Clicky");
   console.log(document.cookie);
   $.get("/team/size")
   .success(function(data){

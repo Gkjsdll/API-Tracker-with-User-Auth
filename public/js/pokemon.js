@@ -5,12 +5,8 @@ var $mainContainer;
 $(document).ready(init);
 
 function init(){
-
-  console.log("Init begun.");
   $mainContainer = $("#mainContainer");
   $mainContainer.on("click", ".pokemon a", viewPokemon);
-  console.log($mainContainer);
-  var pokedex = [];
 
   $.get("http://pokeapi.co/api/v1/pokedex/1/")
   .done(function(data) {

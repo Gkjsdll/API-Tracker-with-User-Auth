@@ -11,3 +11,7 @@
   z-index: -1;
   min-width: 491px;
 }
+
+#logout {
+  display: none;
+}

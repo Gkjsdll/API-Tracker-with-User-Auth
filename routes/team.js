@@ -11,6 +11,7 @@ router.get('/', function(req, res, next) {
 
 router.get("/size", function(req, res, next){
   //retrieve current size of team
+  res.send("Mongo not yet connected.")
 })
 
 router.post('/', function(req, res, next) {

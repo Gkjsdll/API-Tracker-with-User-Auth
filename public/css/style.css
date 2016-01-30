@@ -6,6 +6,10 @@ body {
   min-width: 491px;
 }
 
-#navbar li:hover{
+#navbar li:hover, .navbar .navbar-brand:hover{
   background-color: rgb(224, 224, 224)
+}
+
+.navbar-static-top {
+  border-bottom: 2px solid rgb(224, 224, 224);
 }

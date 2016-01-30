@@ -5,3 +5,7 @@
 .pokemon p {
   margin: 0px 0px 0px 0px;
 }
+
+.btn:active, .btn:focus, .btn:active:focus, .btn-default:active, .btn-default:focus, .btn-default:active:focus { /*bootstrap is annoying*/
+  outline: 0px;
+}

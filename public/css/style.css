@@ -1,3 +1,7 @@
+*:focus, *:active {
+  outline: 0px;
+}
+
 body {
   min-width: 491px;
 }

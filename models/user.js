@@ -7,7 +7,12 @@ var JWT_SECRET = process.env.JWT_SECRET;
 var userSchema = new mongoose.Schema({
   uid: String,
   pokemon: [{
-    name: String
+    poke1: {id: String, name: String},
+    poke2: {id: String, name: String},
+    poke3: {id: String, name: String},
+    poke4: {id: String, name: String},
+    poke5: {id: String, name: String},
+    poke6: {id: String, name: String}
   }]
 });
 

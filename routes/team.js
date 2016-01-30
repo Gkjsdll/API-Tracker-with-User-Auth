@@ -9,12 +9,13 @@ router.get('/', function(req, res, next) {
   res.render('team', { title: "My Team - Pokémon Team Customizer" });
 });
 
+router.get("/size", function(req, res, next){
+  //retrieve current size of team
+})
+
 router.post('/', function(req, res, next) {
   // add pokemon to team
 });
 
-router.put('/', function(req, res, next) {
-  // change moves of pokemon in team
-});
 
 module.exports = router;

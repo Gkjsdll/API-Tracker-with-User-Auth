@@ -13,7 +13,6 @@ function init(){
     data.pokemon.forEach(function(pokemon){
       $.get(`http://pokeapi.co/${pokemon.resource_uri}`)
       .done(function(data){
-        // console.log(data.sprites);
         var listEntry = $('<div>').addClass("col-xs-2 pokemon");
         var listLink = $('<a>').attr('id', data.resource_uri).text(data.name).data('poke_uri', data.resource_uri);
         listEntry.append(listLink);

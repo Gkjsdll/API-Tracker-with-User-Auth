@@ -25,8 +25,8 @@ router.post("/", function(req, res, next){
     if(req.body.name) pokemon.name = req.body.name;
     pokemon.poketype = req.body.poketype;
     user.pokemon.push(pokemon);
-    // console.log("user.pokemon:", user.pokemon);
     user.save();
+    res.send("Pokémon added to team");
   });
 })
 

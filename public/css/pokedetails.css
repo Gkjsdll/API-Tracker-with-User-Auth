@@ -14,3 +14,7 @@ ul {
 #login, #register {
   display: none;
 }
+
+#loading {
+  text-align: center;
+}

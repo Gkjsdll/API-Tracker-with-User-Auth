@@ -6,7 +6,6 @@ function init(){
   popData();
   $.get("/users/profile")
   .success(function(data){
-    console.log(data);
   })
 }
 
@@ -30,17 +29,18 @@ function addPokemon(){
     else{
       swal({
         title: "Name Your Pokémon",
+        text: "This is optional.",
         type: "input",
         showCancelButton: false,
         closeOnConfirm: false,
+        inputPlaceholder: "Unnamed"
       }, function(pokeName){
         var pokeId = location.pathname.slice(location.pathname.lastIndexOf("/")).slice(1);
         $.post(`/team`, {slot: teamSize, poketype: pokeId, name: pokeName})
         .success(function(){
-          console.log("Make this redirect to /team once it is fully funcitonal.");
-          swal.close();
+          location.href = "/team";
+          swal.close()
         })
-        swal.close();
       })
     }
   })
